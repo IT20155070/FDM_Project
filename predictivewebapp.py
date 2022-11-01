@@ -137,7 +137,7 @@ def main():
             int(stays_in_weekend_nights)
             
         except ValueError:
-           col1.error("Pleace enter numaric values.")
+           col1.error("Pleace enter Integer values.")
            st.stop()
     
     if btnsubmit:
@@ -145,7 +145,7 @@ def main():
             int(stays_in_week_nights)
             
         except ValueError:
-           col2.error("Pleace enter numaric values.")
+           col2.error("Pleace enter Integer values.")
            st.stop()
            
     if btnsubmit:
@@ -153,7 +153,7 @@ def main():
             int(adults)
             
         except ValueError:
-           col3.error("Pleace enter numaric values.")
+           col3.error("Pleace enter Integer values.")
            st.stop()
            
     if btnsubmit:
@@ -161,7 +161,7 @@ def main():
             int(children)
             
         except ValueError:
-           col4.error("Pleace enter numaric values.")
+           col4.error("Pleace enter Integer values.")
            st.stop()
     
     if btnsubmit:
@@ -169,7 +169,7 @@ def main():
             int(babies)
             
         except ValueError:
-           col5.error("Pleace enter numaric values.")
+           col5.error("Pleace enter Integer values.")
            st.stop()
            
     if btnsubmit:
