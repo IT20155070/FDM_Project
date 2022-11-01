@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run predictive_web_app.py
+web: sh setup.sh && streamlit run predictivewebapp.py
