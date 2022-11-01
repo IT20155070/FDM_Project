@@ -8,7 +8,7 @@ Created on Thu Oct 27 02:30:20 2022
 import numpy as np
 import pickle
 
-loaded_model = pickle.load(open('C:/Users/sadini/Desktop/FDM/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
 input_data = (0,1,3,0,2,2,0,2,3,1)
 
