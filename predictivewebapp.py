@@ -95,7 +95,7 @@ def main():
     babies = col5.text_input('No of Babies')
     
     col6,col7 = form.columns(2)
-    adr= col6.text_input('adr')
+    adr= col6.text_input('Adr')
     
     required_car_parking_spaces = col7.text_input('Required Car Parking Spaces')
     
