@@ -96,7 +96,7 @@ def main():
     col6,col7 = form.columns(2)
     adr= col6.text_input('adr')
     
-    required_car_parking_spaces = col7.text_input('required_car_parking_spaces')
+    required_car_parking_spaces = col7.text_input('Required car parking spaces')
     
     
     # code for Prediction
