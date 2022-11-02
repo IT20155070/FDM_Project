@@ -62,18 +62,27 @@ def main():
     # getting the input data from the user
     
     form = st.form("Form 1")
-    #meal_list = ['Select...','BB','FB','HB','SC','Undefined']
-    meal_list = ['',0,1,2,3,4]
-    meal = form.selectbox('Select Meal',meal_list)
+
+    choice_meal_list = {0: "BB", 1: "FB", 2: "HB", 3: "SC", 4: "Undefined"}
     
-    #market_segment = ['Select...','Direct','Corporate','Online TA','Offline TA/TO','Complementary','Groups','Aviation']
-    market_segment = ['',0,1,2,3,4,5,6]
-    market_segment = form.selectbox('Select Marcket Segment',market_segment)
+    def drop_func(meal):
+	return choice_meal_list[meal]
+
+    meal = form.selectbox('Select Option', options=list(choice_meal_list.keys()), format_func=drop_func)
     
-    #reserved_room_type_list = ['Select...','C','A','D','E','G','F','H','L','B']
-    reserved_room_type_list = ['',1,2,3,4,5,6,7,8,9]
-    reserved_room_type_list = form.selectbox('Select Room Type',reserved_room_type_list)
+    choice_market_segment = {0: "Direct", 1: "Corporate", 2: "Online TA", 3: "Offline TA/TO", 4: "Complementary", 5: "Groups", 6: "Aviation"}
+
+    def drop_func2(segment):
+	return choice_market_segment[segment]
     
+    market_segment = form.selectbox('Select Marcket Segment', options=list(choice_market_segment.keys()), format_func=drop_func2)
+    
+    choice_reserved_room_type_list = {1: "C", 2: "A", 3: "D", 4: "E", 5: "G", 6: "F", 7: "H", 8: "L", 9: "B"}
+    
+    def drop_func3(room):
+	return choice_reserved_room_type_list[room]
+
+    reserved_room_type_list = form.selectbox('Select Room Type', options=list(choice_reserved_room_type_list.keys()), format_func=drop_func3)  
     col1,col2 = form.columns(2)
     stays_in_weekend_nights = col1.text_input('Weekend Nights')
     
