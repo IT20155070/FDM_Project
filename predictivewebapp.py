@@ -66,23 +66,24 @@ def main():
     choice_meal_list = {0: "BB", 1: "FB", 2: "HB", 3: "SC", 4: "Undefined"}
     
     def drop_func(meal):
-	return choice_meal_list[meal]
+        return choice_meal_list[meal]
 
     meal = form.selectbox('Select Option', options=list(choice_meal_list.keys()), format_func=drop_func)
     
     choice_market_segment = {0: "Direct", 1: "Corporate", 2: "Online TA", 3: "Offline TA/TO", 4: "Complementary", 5: "Groups", 6: "Aviation"}
 
     def drop_func2(segment):
-	return choice_market_segment[segment]
+        return choice_market_segment[segment]
     
     market_segment = form.selectbox('Select Marcket Segment', options=list(choice_market_segment.keys()), format_func=drop_func2)
     
     choice_reserved_room_type_list = {1: "C", 2: "A", 3: "D", 4: "E", 5: "G", 6: "F", 7: "H", 8: "L", 9: "B"}
     
     def drop_func3(room):
-	return choice_reserved_room_type_list[room]
+        return choice_reserved_room_type_list[room]
 
-    reserved_room_type_list = form.selectbox('Select Room Type', options=list(choice_reserved_room_type_list.keys()), format_func=drop_func3)  
+    reserved_room_type_list = form.selectbox('Select Room Type', options=list(choice_reserved_room_type_list.keys()), format_func=drop_func3)
+    
     col1,col2 = form.columns(2)
     stays_in_weekend_nights = col1.text_input('Weekend Nights')
     
