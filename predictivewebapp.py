@@ -29,11 +29,11 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 # loading the saved model
-loaded_model = pickle.load(open('trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('C:/Users/sadini/Desktop/FDM/trained_model.sav', 'rb'))
 
 # creating a function for Prediction
 
-def diabetes_prediction(input_data):
+def hotel_prediction(input_data):
     
 
     # changing the input_data to numpy array
@@ -45,7 +45,7 @@ def diabetes_prediction(input_data):
     prediction = loaded_model.predict(input_data_reshaped)
     print(prediction)
 
-    if (prediction[0] == 0):
+    if (prediction == 'Resort Hotel'):
       return 'Resort Hotel'
     else:
       return 'City Hotel'
@@ -83,7 +83,7 @@ def main():
         return choice_reserved_room_type_list[room]
 
     reserved_room_type_list = form.selectbox('Select Room Type', options=list(choice_reserved_room_type_list.keys()), format_func=drop_func3)
-  
+    
     col1,col2 = form.columns(2)
     stays_in_weekend_nights = col1.text_input('Weekend Nights')
     
@@ -147,7 +147,7 @@ def main():
             int(stays_in_weekend_nights)
             
         except ValueError:
-           col1.error("Pleace enter Integer values.")
+           col1.error("Pleace enter numaric values.")
            st.stop()
     
     if btnsubmit:
@@ -155,7 +155,7 @@ def main():
             int(stays_in_week_nights)
             
         except ValueError:
-           col2.error("Pleace enter Integer values.")
+           col2.error("Pleace enter numaric values.")
            st.stop()
            
     if btnsubmit:
@@ -163,7 +163,7 @@ def main():
             int(adults)
             
         except ValueError:
-           col3.error("Pleace enter Integer values.")
+           col3.error("Pleace enter numaric values.")
            st.stop()
            
     if btnsubmit:
@@ -171,7 +171,7 @@ def main():
             int(children)
             
         except ValueError:
-           col4.error("Pleace enter Integer values.")
+           col4.error("Pleace enter numaric values.")
            st.stop()
     
     if btnsubmit:
@@ -179,11 +179,12 @@ def main():
             int(babies)
             
         except ValueError:
-           col5.error("Pleace enter Integer values.")
+           col5.error("Pleace enter numaric values.")
            st.stop()
            
     if btnsubmit:
-        diagnosis = diabetes_prediction([meal, market_segment, reserved_room_type_list, stays_in_weekend_nights, stays_in_week_nights, adults, children, babies, adr, required_car_parking_spaces])
+        diagnosis = hotel_prediction([meal, market_segment, reserved_room_type_list, stays_in_weekend_nights, stays_in_week_nights, 
+                                         adults, children, babies, adr, required_car_parking_spaces])
         
         
     form.success(diagnosis)
